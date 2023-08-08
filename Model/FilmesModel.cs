@@ -10,6 +10,7 @@ namespace FilmesApi.Models{
         public string genero {get; set;}
 
         [Required(ErrorMessage = "O ano não pode ser nulo")]
+        [Range(1900,2023, ErrorMessage = "O ano do filme deve estar entre 1900 à 2023")]
         public int ano {get; set;}
 
         public List<AtorElenco> elencos {get; set;}
@@ -18,7 +19,7 @@ namespace FilmesApi.Models{
         public double duracao {get; set;}
 
         override public string ToString(){
-            return $"{titulo} \n {genero} \n {ano} \n {elencos.ToString()} \n {duracao}";
+            return $"{titulo} \n {genero} \n {ano} \n {duracao}";
         }
     }
 }
