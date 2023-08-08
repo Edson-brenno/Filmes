@@ -9,6 +9,10 @@ namespace FilmesApi.Models{
         public string nome { get; set; }
 
         public string sobrenome  { get; set; }
+
+        override public  string ToString(){
+            return $"{nome} {sobrenome};";
+        }
     }
 
 }
