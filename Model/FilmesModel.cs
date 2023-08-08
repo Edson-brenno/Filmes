@@ -9,10 +9,16 @@ namespace FilmesApi.Models{
         [Required(ErrorMessage = "O genero não pode ser nulo")]
         public string genero {get; set;}
 
+        [Required(ErrorMessage = "O ano não pode ser nulo")]
         public int ano {get; set;}
 
         public List<AtorElenco> elencos {get; set;}
+
+        [Required(ErrorMessage = "A duração do filme não pode ser nula")]
         public double duracao {get; set;}
 
+        override public string ToString(){
+            return $"{titulo} \n {genero} \n {ano} \n {elencos.ToString()} \n {duracao}";
+        }
     }
 }
